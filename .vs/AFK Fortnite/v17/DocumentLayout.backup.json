@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\UberN\\source\\repos\\MehBlorg\\Fortnite-XP-Tool\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{43925E15-F708-4D82-B9DB-D05532E8B9CE}|AFK Fortnite\\AFK Fortnite.vbproj|c:\\users\\ubern\\source\\repos\\mehblorg\\fortnite-xp-tool\\afk fortnite\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{43925E15-F708-4D82-B9DB-D05532E8B9CE}|AFK Fortnite\\AFK Fortnite.vbproj|solutionrelative:afk fortnite\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{43925E15-F708-4D82-B9DB-D05532E8B9CE}|AFK Fortnite\\AFK Fortnite.vbproj|C:\\Users\\UberN\\source\\repos\\MehBlorg\\Fortnite-XP-Tool\\afk fortnite\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{43925E15-F708-4D82-B9DB-D05532E8B9CE}|AFK Fortnite\\AFK Fortnite.vbproj|solutionrelative:afk fortnite\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+      "AbsoluteMoniker": "D:0:0:{43925E15-F708-4D82-B9DB-D05532E8B9CE}|AFK Fortnite\\AFK Fortnite.vbproj|c:\\users\\ubern\\source\\repos\\mehblorg\\fortnite-xp-tool\\afk fortnite\\form2.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{43925E15-F708-4D82-B9DB-D05532E8B9CE}|AFK Fortnite\\AFK Fortnite.vbproj|solutionrelative:afk fortnite\\form2.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,26 +19,13 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Form1.vb",
-              "DocumentMoniker": "C:\\Users\\UberN\\source\\repos\\MehBlorg\\Fortnite-XP-Tool\\AFK Fortnite\\Form1.vb",
-              "RelativeDocumentMoniker": "AFK Fortnite\\Form1.vb",
-              "ToolTip": "C:\\Users\\UberN\\source\\repos\\MehBlorg\\Fortnite-XP-Tool\\AFK Fortnite\\Form1.vb",
-              "RelativeToolTip": "AFK Fortnite\\Form1.vb",
-              "ViewState": "AgIAAG0AAAAAAAAAAAAEwNUAAAA/AAAAAAAAAA==",
+              "Title": "Form2.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\UberN\\source\\repos\\MehBlorg\\Fortnite-XP-Tool\\AFK Fortnite\\Form2.vb",
+              "RelativeDocumentMoniker": "AFK Fortnite\\Form2.vb",
+              "ToolTip": "C:\\Users\\UberN\\source\\repos\\MehBlorg\\Fortnite-XP-Tool\\AFK Fortnite\\Form2.vb [Design]",
+              "RelativeToolTip": "AFK Fortnite\\Form2.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-09-23T21:24:52.35Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form1.vb [Design]",
-              "DocumentMoniker": "C:\\Users\\UberN\\source\\repos\\MehBlorg\\Fortnite-XP-Tool\\AFK Fortnite\\Form1.vb",
-              "RelativeDocumentMoniker": "AFK Fortnite\\Form1.vb",
-              "ToolTip": "C:\\Users\\UberN\\source\\repos\\MehBlorg\\Fortnite-XP-Tool\\AFK Fortnite\\Form1.vb [Design]",
-              "RelativeToolTip": "AFK Fortnite\\Form1.vb [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-09-23T21:14:02.616Z",
+              "WhenOpened": "2025-09-24T16:03:34.022Z",
               "EditorCaption": " [Design]"
             }
           ]
