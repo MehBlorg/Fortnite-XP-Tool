@@ -33,14 +33,17 @@ Partial Class Form1
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.BtnBackForth = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.LabelBnF = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(15, 195)
+        Me.Button1.Location = New System.Drawing.Point(12, 195)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(84, 23)
+        Me.Button1.Size = New System.Drawing.Size(87, 23)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Jam Stage"
         Me.Button1.UseVisualStyleBackColor = True
@@ -56,16 +59,16 @@ Partial Class Form1
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(104, 195)
+        Me.Button2.Location = New System.Drawing.Point(12, 224)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(84, 23)
+        Me.Button2.Size = New System.Drawing.Size(87, 23)
         Me.Button2.TabIndex = 2
         Me.Button2.Text = "Lego Mode"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(15, 224)
+        Me.Button3.Location = New System.Drawing.Point(12, 293)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(171, 23)
         Me.Button3.TabIndex = 3
@@ -84,7 +87,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 179)
+        Me.Label2.Location = New System.Drawing.Point(143, 200)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(34, 13)
         Me.Label2.TabIndex = 5
@@ -102,7 +105,7 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(14, 166)
+        Me.Label3.Location = New System.Drawing.Point(105, 200)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(32, 13)
         Me.Label3.TabIndex = 7
@@ -111,7 +114,7 @@ Partial Class Form1
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(154, 179)
+        Me.Label4.Location = New System.Drawing.Point(143, 229)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(34, 13)
         Me.Label4.TabIndex = 8
@@ -120,18 +123,48 @@ Partial Class Form1
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(156, 166)
+        Me.Label5.Location = New System.Drawing.Point(105, 229)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(32, 13)
         Me.Label5.TabIndex = 9
         Me.Label5.Text = "Next:"
+        '
+        'BtnBackForth
+        '
+        Me.BtnBackForth.Location = New System.Drawing.Point(12, 253)
+        Me.BtnBackForth.Name = "BtnBackForth"
+        Me.BtnBackForth.Size = New System.Drawing.Size(87, 23)
+        Me.BtnBackForth.TabIndex = 10
+        Me.BtnBackForth.Text = "Back n Forth"
+        Me.BtnBackForth.UseVisualStyleBackColor = True
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(105, 258)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(32, 13)
+        Me.Label6.TabIndex = 12
+        Me.Label6.Text = "Next:"
+        '
+        'LabelBnF
+        '
+        Me.LabelBnF.AutoSize = True
+        Me.LabelBnF.Location = New System.Drawing.Point(143, 258)
+        Me.LabelBnF.Name = "LabelBnF"
+        Me.LabelBnF.Size = New System.Drawing.Size(34, 13)
+        Me.LabelBnF.TabIndex = 11
+        Me.LabelBnF.Text = "00:00"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(200, 253)
+        Me.ClientSize = New System.Drawing.Size(201, 321)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.LabelBnF)
+        Me.Controls.Add(Me.BtnBackForth)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
@@ -142,7 +175,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.PictureBox1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form1"
         Me.Text = "XP+"
@@ -162,4 +195,7 @@ Partial Class Form1
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
+    Friend WithEvents BtnBackForth As Button
+    Friend WithEvents Label6 As Label
+    Friend WithEvents LabelBnF As Label
 End Class

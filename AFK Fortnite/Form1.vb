@@ -25,6 +25,7 @@ Public Class Form1
     Private Const VK_A As Byte = &H41
     Private Const VK_S As Byte = &H53
     Private Const VK_D As Byte = &H44
+    Private Const VK_LCONTROL As Byte = &HA2
 
     ' Flags for key press and key release
     Private Const KEYEVENTF_KEYDOWN As Integer = &H0
@@ -33,6 +34,7 @@ Public Class Form1
     ' Variables to track if the loops are running
     Private jamloopRunning As Boolean = False
     Private legoloopRunning As Boolean = False
+    Private bnfloopRunning As Boolean = False
 
     ' Countdown timer variables
     Private countdownTime As TimeSpan = TimeSpan.FromHours(3) + TimeSpan.FromMinutes(30)
@@ -84,6 +86,26 @@ Public Class Form1
         End If
     End Sub
 
+    Private Sub BtnBackForth_Click(sender As Object, e As EventArgs) Handles BtnBackForth.Click
+        If bnfloopRunning Then
+            ' If loop is running, stop it
+            bnfloopRunning = False
+            BtnBackForth.BackColor = Color.Empty ' Reset button color
+            ResetCountdown() ' Reset countdown timer
+            ResetTimerLabels() ' Reset timer labels
+        Else
+            ' If loop is not running, start it
+            bnfloopRunning = True
+            BtnBackForth.BackColor = Color.Green ' Set button color to green
+
+            ' Start the loop in a separate thread
+            Dim t As New Thread(AddressOf BnFLoopRoutine)
+            t.Start()
+
+            ' Start or reset the countdown timer
+            StartCountdown()
+        End If
+    End Sub
 
     Private Function IsFortniteInFocus() As Boolean
         Dim fortniteWindowTitle As String = "Fortnite" ' Adjust this if the actual window title is different
@@ -158,6 +180,57 @@ Public Class Form1
         End While
     End Sub
 
+    Private Sub BnFLoopRoutine()
+        While bnfloopRunning
+            If IsFortniteInFocus() Then
+                ' Fortnite is in focus, execute loop
+
+                ' Countdown until next action
+                Dim randomSleepDuration = random.Next(60000, 150000)
+                Dim remainingTime = TimeSpan.FromMilliseconds(randomSleepDuration)
+
+                ' Display countdown until the next action
+                Do While remainingTime.TotalMilliseconds > 0 AndAlso bnfloopRunning
+                    Me.Invoke(Sub() LabelBnF.Text = remainingTime.ToString("mm\:ss"))
+                    Thread.Sleep(1000)
+                    remainingTime = remainingTime.Subtract(TimeSpan.FromSeconds(1))
+                Loop
+
+                ' Check if the loop is still running after the countdown
+                If bnfloopRunning Then
+                    ' Perform actions if Fortnite is still in focus
+                    If IsFortniteInFocus() Then
+                        ' Simulate tapping the "W" (move fwd) key
+                        keybd_event(VK_W, 0, KEYEVENTF_KEYDOWN, 0)
+                        Thread.Sleep(500) ' .5 second
+                        keybd_event(VK_W, 0, KEYEVENTF_KEYUP, 0)
+                        Thread.Sleep(500) ' .5 second
+                        keybd_event(VK_W, 0, KEYEVENTF_KEYDOWN, 0)
+                        Thread.Sleep(500) ' .5 second
+                        keybd_event(VK_W, 0, KEYEVENTF_KEYUP, 0)
+
+                        Thread.Sleep(1500) ' 1.5 second
+
+                        ' Simulate tapping the "S" (move backwd) key
+                        keybd_event(VK_S, 0, KEYEVENTF_KEYDOWN, 0)
+                        Thread.Sleep(500) ' .5 second
+                        keybd_event(VK_S, 0, KEYEVENTF_KEYUP, 0)
+                        Thread.Sleep(500) ' .5 second
+                        keybd_event(VK_S, 0, KEYEVENTF_KEYDOWN, 0)
+                        Thread.Sleep(500) ' .5 second
+                        keybd_event(VK_S, 0, KEYEVENTF_KEYUP, 0)
+
+                    End If
+                End If
+
+            Else
+                ' Fortnite is not in focus, wait before checking again
+                Thread.Sleep(1000) ' 1 second
+            End If
+        End While
+    End Sub
+
+
     Private Sub LegoLoopRoutine()
         Dim wasdKeys As Byte() = {VK_W, VK_A, VK_S, VK_D}
         While legoloopRunning
@@ -199,9 +272,10 @@ Public Class Form1
         End While
     End Sub
     Private Sub ResetTimerLabels()
-        ' Reset the text of Label2 and Label4 to the initial state
+        ' Reset the text of countdown labels to the initial state
         Me.Invoke(Sub() Label2.Text = "00:00")
         Me.Invoke(Sub() Label4.Text = "00:00")
+        Me.Invoke(Sub() LabelBnF.Text = "00:00")
     End Sub
 
     Private Sub StartCountdown()
@@ -244,6 +318,9 @@ Public Class Form1
         If legoloopRunning Then
             legoloopRunning = False
         End If
+        If bnfloopRunning Then
+            bnfloopRunning = False
+        End If
         If countdownRunning Then
             countdownRunning = False
         End If
@@ -252,9 +329,4 @@ Public Class Form1
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Form2.Show()
     End Sub
-
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
 End Class
